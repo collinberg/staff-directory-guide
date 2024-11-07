@@ -1,0 +1,85 @@
+.staff-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.staff-list li {
+  max-width: 50%;
+  text-align: left;
+  display: inline-block;
+  vertical-align: top;
+  padding: 0px 20px;
+  margin-bottom: 30px;
+}
+
+.staff-list h3{
+   color: #372e2c;
+   margin-bottom: 0;
+}
+
+.profileLink {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    line-height: 0;
+}
+
+.staff-title-sc {
+  text-transform: uppercase;
+  color: #372e2c;
+  font-size: .6em;
+  margin: 5px 0;
+  
+}
+
+.hover-area {
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    height: 100%;
+    transition: opacity .4s;
+    top: 0;
+    color: white;
+    width: 100%;
+}
+
+.hoverbg {
+    background: hsla(357, 52%, 43%, 1);
+    opacity: .8;
+    transition: all .4s;
+    z-index: 10;
+    width: 600px;
+    position: absolute;
+    left: -470px;
+    top: -388px;
+    height: 600px;
+    transform: rotate(-45deg);
+}
+
+.hover-area span {
+    z-index: 200;
+    color: white;
+    position: absolute;
+    top: 50%;
+    font-size: 1.5em;
+    left: 45%;
+    display: block;
+}
+
+.profileLink:hover .hover-area {
+ opacity: 1
+}
+
+.profileLink:hover .hoverbg {
+ left: -125px;
+ top: -125px
+}
+
+@media(min-width: 992px) {
+ 
+  .staff-list li {
+    max-width: 25%;
+  } 
+  
+}
