@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name:     Staff Directory
- * Plugin URI:      https://sjiassociates.com/staff
+ * Plugin URI:      https://hirecollin.com/projects/staff
  * Description:     A Basic Plugin for adding a Staff Page and Custom Post Type
  * Author:          Collin Berg
  * Author URI:      https://hirecollin.com
