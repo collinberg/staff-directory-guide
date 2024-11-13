@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name:     Staff Directory
- * Plugin URI:      https://sjiassociates.com/staff
+ * Plugin URI:      https://hirecollin.com/projects/staff
  * Description:     A Basic Plugin for adding a Staff Page and Custom Post Type
  * Author:          Collin Berg
  * Author URI:      https://hirecollin.com
@@ -20,6 +20,8 @@ if ( ! defined( 'WPINC' ) ) {
 require plugin_dir_path( __FILE__ ) .'includes/class-post-type.php';
 require plugin_dir_path( __FILE__ ) .'includes/class-staff-post-type.php';
 require plugin_dir_path( __FILE__ ) .'includes/class-post-type-metaboxes.php';
+
+require plugin_dir_path( __FILE__ ) .'includes/class-staff-blocks.php';
 
 // Instantiate registration class, so we can add it as a dependency to main plugin class.
 $post_type_registrations = new Team_Post_Type_Registrations;
@@ -115,4 +117,20 @@ function staff_shortcode() {
 
 }
 add_shortcode( 'staff', 'staff_shortcode' );
+
+function staff_single_template($single) {
+    global $post;
+
+    // Check if the post type matches
+    if ($post->post_type == 'staff' && !wp_is_block_theme() ) {
+        // Locate the custom template in your plugin folder
+        if (file_exists(plugin_dir_path(__FILE__) . '/templates/single-staff.php')) {
+            return plugin_dir_path(__FILE__) . '/templates/single-staff.php';
+        }
+    }
+    return $single;
+}
+add_filter('single_template', 'staff_single_template');
+
+
 
