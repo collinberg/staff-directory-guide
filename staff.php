@@ -13,15 +13,14 @@
  
  
 // If this file is called directly, abort.
-if ( ! defined( 'WPINC' ) ) {
-	die;
+if (!defined('ABSPATH')) {
+	exit; // Exit if accessed directly.
 }
 
 require plugin_dir_path( __FILE__ ) .'includes/class-post-type.php';
 require plugin_dir_path( __FILE__ ) .'includes/class-staff-post-type.php';
-require plugin_dir_path( __FILE__ ) .'includes/class-post-type-metaboxes.php';
-
 require plugin_dir_path( __FILE__ ) .'includes/class-staff-blocks.php';
+require plugin_dir_path( __FILE__ ) .'includes/class-post-type-post_meta.php';
 
 // Instantiate registration class, so we can add it as a dependency to main plugin class.
 $post_type_registrations = new Team_Post_Type_Registrations;
@@ -36,30 +35,17 @@ register_activation_hook( __FILE__, array( $post_type, 'activate' ) );
 $post_type_registrations->init();
 
 // Initialize metaboxes
-$post_type_metaboxes = new Team_Post_Type_Metaboxes;
+$post_type_metaboxes = new Staff_Post_Type_Metaboxes;
 $post_type_metaboxes->init();
-
-/**
- * Adds styling to the dashboard for the post type and adds team posts
- * to the "At a Glance" metabox.
- */
-/*
-if ( is_admin() ) {
-
-	require plugin_dir_path( __FILE__ ) . 'includes/class-post-type-admin.php';
-
-	$post_type_admin = new Team_Post_Type_Admin( $post_type_registrations );
-	$post_type_admin->init();
-
-}
-*/
 
 
 add_action('wp_enqueue_scripts','staff_styles');
 function staff_styles(){
-  if( is_page() && !is_front_page() ) {
-	  wp_enqueue_style( 'staff-styles', plugin_dir_url(__FILE__) .'assets/css/staff.css' );
-	}
+  if( !wp_is_block_theme() ):
+    if( is_page() && !is_front_page() ) {
+      wp_enqueue_style( 'staff-styles', plugin_dir_url(__FILE__) .'assets/css/staff.css' );
+    }
+  endif;
 }
 
 
