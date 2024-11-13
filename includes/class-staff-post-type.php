@@ -50,11 +50,13 @@ class Team_Post_Type_Registrations {
 			'not_found'          => __( 'No Staff Member found.', 'staff-direcotry-guide' ),
 			'not_found_in_trash' => __( 'No Staff Member found in Trash.', 'staff-direcotry-guide' )
 		);
+		
 	
 		$args = array(
 			'labels'             => $labels,
 	        'description'        => __( 'Description.', 'staff-direcotry-guide' ),
 			'public'             => true,
+			'show_in_rest' 		 => true,
 			'publicly_queryable' => true,
 			'show_ui'            => true,
 			'show_in_menu'       => true,
@@ -64,8 +66,8 @@ class Team_Post_Type_Registrations {
 			'has_archive'        => false,		
 			'hierarchical'       => true,
 			'menu_position'      => null,
-			'menu_icon' => 'dashicons-admin-users',
-			'supports'           => array( 'title', 'editor', 'author', 'thumbnail','page-attributes')
+			'menu_icon' 		 => 'dashicons-admin-users',
+			'supports'           => array( 'title', 'editor', 'author', 'thumbnail','page-attributes'),
 		);
 	
 		register_post_type( $this->post_type, $args );
