@@ -1,34 +1,40 @@
-=== Staff Directory Guide ===
-Contributors: CB3008
-Donate link: https://hirecollin.com/
-Tags: staff directory, staff, company directory, member directory, profiles
-Requires at least: 4.7
-Tested up to: 6.6.2
-Stable tag: 4.3
-Requires PHP: 7.0
-License: GPLv2 or later
-License URI: https://www.gnu.org/licenses/gpl-2.0.html
+# Staff Directory Guide 
 
-An easy-to-use plugin that creates a Staff custom post type. allowing you to create and group people in your organization, and output them using a custom block.
+## Description
 
-== Description ==
 The Staff Directory Guide plugin allows creates a custom post type of staff. This post type comes equipped with 4 social profile link fields, picture, and biography area. 
 
 The plugin comes equipped with default templates for staff profiles, but can be over-written in themes.
 
-== Frequently Asked Questions ==
+## Getting Started
 
-== Changelog ==
+### Installing
 
-= 1.0 =
-* Added ReadMe file for Github.
+1. Sign in to WordPress.
+2. In the left-hand menu, select Plugins > Add New.
+3. Select Upload Plugin.
+4. Select Choose File.
+5. Locate and select the plugin .zip file on your local computer and then select Open.
+6. Select Install Now.
+Optional: Select Activate Plugin if you want the plugin to be active after the installation. If not, you can always activate it later.
 
-= 0.5 =
-* Initalized. 
+## Authors
 
- == Upgrade Notice ==
+Contributors names and contact info
+ 
+[Collin Berg](https://hirecollin.com)
 
- = 1.0 =
-Stable version. Minor bug fixes. (as if thats helpful to anyone).
+## Version History
 
-== Screenshots ==
+* 0.2
+    * Various bug fixes and optimizations
+    * See [release history]()
+* 0.1
+    * Initial Release
+
+## License
+
+This project is licensed under the GPLv2 License.
+
+## Acknowledgments
+* My faithful dog, Dante, who never leaves my side and is forver burrowing under overs.
