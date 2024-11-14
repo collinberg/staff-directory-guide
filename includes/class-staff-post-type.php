@@ -67,7 +67,17 @@ class Team_Post_Type_Registrations {
 			'hierarchical'       => true,
 			'menu_position'      => null,
 			'menu_icon' 		 => 'dashicons-admin-users',
-			'supports'           => array( 'title', 'editor', 'author', 'thumbnail','page-attributes'),
+			'supports'           => array( 'title', 'editor', 'author', 'thumbnail','custom-fields'),
+			'template' => array(
+				array(
+					'staff-direcotry-guide/staff-profile', 
+					array(
+						'lock' => array(
+							'remove' => true,
+						),
+					)
+				)
+			)
 		);
 	
 		register_post_type( $this->post_type, $args );
@@ -103,6 +113,7 @@ class Team_Post_Type_Registrations {
 			'public'            => true,
 			'show_in_nav_menus' => true,
 			'show_ui'           => true,
+			'show_in_rest'		=> true,
 			'show_tagcloud'     => true,
 			'hierarchical'      => true,
 			'rewrite'           => array( 'slug' => 'staff-category' ),
