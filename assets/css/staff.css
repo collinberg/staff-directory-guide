@@ -2,6 +2,9 @@
   margin: 0;
   padding: 0;
   list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
 }
 
 .staff-list li {
@@ -9,13 +12,18 @@
   text-align: left;
   display: inline-block;
   vertical-align: top;
-  padding: 0px 20px;
   margin-bottom: 30px;
+}
+
+.staff-list li img {
+  max-width: 100%;
+  height: auto;
 }
 
 .staff-list h3{
    color: #372e2c;
    margin-bottom: 0;
+   margin-top: 0.25em;
 }
 
 .profileLink {
