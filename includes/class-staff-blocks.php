@@ -9,6 +9,7 @@ register_block_pattern_category(
     'staff',
     array( 'label' => __( 'Staff', 'staff-directory-guide' ) )
 );
+
 function staff_single_pattern()
 {
  

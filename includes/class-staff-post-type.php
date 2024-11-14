@@ -69,14 +69,23 @@ class Team_Post_Type_Registrations {
 			'menu_icon' 		 => 'dashicons-admin-users',
 			'supports'           => array( 'title', 'editor', 'author', 'thumbnail','custom-fields'),
 			'template' => array(
-				array(
-					'staff-direcotry-guide/staff-profile', 
-					array(
-						'lock' => array(
-							'remove' => true,
-						),
-					)
-				)
+				array( 'core/columns', array(), array(
+					array( 'core/column', array(), array(
+						array( 'core/post-featured-image', array() ),
+						array( 'sceniber/staff-profile', 
+							array(
+								'lock' => array(
+									'remove' => true,
+								),
+							)
+						)
+					) ),
+					array( 'core/column', array(), array(
+						array( 'core/paragraph', array(
+							'placeholder' => 'Add a paragraph about the person...'
+						) ),
+					) ),
+				) )
 			)
 		);
 	

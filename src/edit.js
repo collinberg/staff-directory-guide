@@ -25,7 +25,7 @@ export default function Edit() {
 	const [meta, setMeta] = useEntityProp('postType', currentPostType, 'meta');
 
 	// Destructure all our individual properties from the meta for ease of use
-	const {employeeTitle, employeeEmail} = meta
+	const {employeeTitle, employeeEmail, employeeLinkedin, employeeThreads} = meta
 
 	// Flexible helper for setting a single meta value w/o mutating state
 	const updateMeta = ( key, value ) => {
@@ -49,6 +49,18 @@ export default function Edit() {
 					value={ employeeEmail || '' }
 					onChange={ ( value ) => updateMeta( "employeeEmail",value  )}
                 />
+				<InputControl
+					type="string"
+					label='Employee Linkedin'
+					value={ employeeLinkedin || '' }
+					onChange={ ( value ) => updateMeta( "employeeLinkedin",value  )}
+                />
+				<InputControl
+					type="string"
+					label='Employee Threads'
+					value={ employeeThreads || '' }
+					onChange={ ( value ) => updateMeta( "employeeThreads",value  )}
+                />				
 			</div>
 
 		</div>

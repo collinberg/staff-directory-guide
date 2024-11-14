@@ -11,27 +11,48 @@
  *
  * @package Staff_Post_Type
  */
+class Staff_Post_Type_Metaboxes {
+	public function init() {
+		add_action( 'init', array($this,'staff_meta'));
+	}
 
 
-
-add_action( 'init', 'staff_meta');
-function staff_meta() {
-	register_post_meta(
-		'staff',
-		'employeeTitle',
-		array(
-			'show_in_rest' => true,
-			'single'       => true,
-			'type'         => 'string',
-		)
-	);
-	register_post_meta(
-		'staff',
-		'employeeEmail',
-		array(
-			'show_in_rest' => true,
-			'single'       => true,
-			'type'         => 'string',
-		)
-	);
+	public function staff_meta() {
+		register_post_meta(
+			'staff',
+			'employeeTitle',
+			array(
+				'show_in_rest' => true,
+				'single'       => true,
+				'type'         => 'string',
+			)
+		);
+		register_post_meta(
+			'staff',
+			'employeeEmail',
+			array(
+				'show_in_rest' => true,
+				'single'       => true,
+				'type'         => 'string',
+			)
+		);
+		register_post_meta(
+			'staff',
+			'employeeLinkedin',
+			array(
+				'show_in_rest' => true,
+				'single'       => true,
+				'type'         => 'string',
+			)
+		);
+		register_post_meta(
+			'staff',
+			'employeeThreads',
+			array(
+				'show_in_rest' => true,
+				'single'       => true,
+				'type'         => 'string',
+			)
+		);
+	}
 }
