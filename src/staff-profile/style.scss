@@ -1,0 +1,17 @@
+.wp-block-sceniber-staff-profile {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+ 
+    h3{
+      margin: 0;
+    }
+    .sdg_social-links {
+      margin-top: 1.5em;
+      a {
+        display: inline-block;
+        width: 24px;
+      }
+    }
+}
