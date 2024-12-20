@@ -20,7 +20,7 @@ if (!defined('ABSPATH')) {
 
 require plugin_dir_path( __FILE__ ) .'includes/class-post-type.php';
 require plugin_dir_path( __FILE__ ) .'includes/class-staff-post-type.php';
-require plugin_dir_path( __FILE__ ) .'includes/class-staff-blocks.php';
+require plugin_dir_path( __FILE__ ) .'includes/class-block-patterns.php';
 require plugin_dir_path( __FILE__ ) .'includes/class-post-type-post_meta.php';
 
 // Instantiate registration class, so we can add it as a dependency to main plugin class.
@@ -60,7 +60,7 @@ add_action('wp_enqueue_scripts','staff_styles');
  */
 function staff_register_meta_block()
 {
-	register_block_type(__DIR__ . '/build');
+	register_block_type(__DIR__ . '/build/staff-profile');
 }
 add_action('init', 'staff_register_meta_block');
 

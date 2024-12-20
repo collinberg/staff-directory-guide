@@ -16,6 +16,8 @@ class Team_Post_Type_Registrations {
 	public function init() {
 		// Add the staff post type and taxonomies
 		add_action( 'init', array( $this, 'register' ) );
+		add_filter( 'enter_title_here', array($this,'change_title_text' ) );
+
 	}
 	/**
 	 * Initiate registrations of post type and taxonomies.
@@ -133,5 +135,20 @@ class Team_Post_Type_Registrations {
 		$args = apply_filters( 'team_post_type_category_args', $args );
 
 		register_taxonomy( $this->taxonomies[0], $this->post_type, $args );
-	}		 			
+	}
+
+	/**
+	 * Register a taxonomy for Team Categories.
+	 *
+	 * @link http://codex.wordpress.org/Function_Reference/register_taxonomy
+	 */
+	public function change_title_text( $title ){
+		$screen = get_current_screen();
+	  
+		if  ( 'staff' == $screen->post_type ) {
+			 $title = 'Enter Staff Members Name';
+		}
+	  
+		return $title;
+   } 
 }
