@@ -6,9 +6,10 @@
 
 An small plugin that creates a Staff custom post type, allowing you to create and group people in your organization, and output them using a custom block.
 
+<div align="center" style="gap: 15px">
 <img src="docs/StaffBlock-empty.png" width="43%" alt="Default configuration for a staff profile">
 <img src="docs/BlockEditor.png" width="46.7%" alt="Editor view of with content filled in.">
-
+</div>
 ## Getting Started
 
 The Staff Directory Guide plugin allows creates a custom post type of staff. This post type comes equipped with 4 social profile link fields, picture, and biography area. The plugin comes equipped with default templates for staff profiles, but can be over-written in themes.
