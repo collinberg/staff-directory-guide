@@ -6,13 +6,16 @@
 
 An small plugin that creates a Staff custom post type, allowing you to create and group people in your organization, and output them using a custom block.
 
-![Default configuration for a staff profile](docs/StaffBlock-empty.png)
+<img src="docs/StaffBlock-empty.png" width="43%" alt="Default configuration for a staff profile">
+<img src="docs/BlockEditor.png" width="46.7%" alt="Editor view of with content filled in.">
 
 ## Getting Started
 
 The Staff Directory Guide plugin allows creates a custom post type of staff. This post type comes equipped with 4 social profile link fields, picture, and biography area. The plugin comes equipped with default templates for staff profiles, but can be over-written in themes.
 
-### Installing
+The plugin comes equiped with a [staff] shortcode that can be used to output a grid of every employee. A custom block to achieve this is currently in development.
+
+## Installing
 
 1. Sign in to WordPress.
 2. In the left-hand menu, select Plugins > Add New.
@@ -24,17 +27,7 @@ The Staff Directory Guide plugin allows creates a custom post type of staff. Thi
 
 ## Authors
 
-Contributors names and contact info
-
 [Collin Berg](https://hirecollin.com)
-
-## Version History
-
-- 0.2
-  - Various bug fixes and optimizations
-  - See [commit change]() or See [release history]()
-- 0.1
-  - Initial Release
 
 ## License
 
@@ -42,4 +35,4 @@ This project is licensed under the GPLv2 License.
 
 ## Acknowledgments
 
-- My faithful dog, Dante, who never leaves my side and is forver burrowing under overs.
+- My faithful dog, Dante, who never leaves my side and is forever burrowing under overs.
