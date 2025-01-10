@@ -8,6 +8,7 @@ register_block_pattern_category(
     array( 'label' => __( 'Staff', 'staff-directory-guide' ) )
 );
 
+add_action('init', 'staff_single_pattern');
 function staff_single_pattern()
 {
     register_block_pattern(
@@ -20,20 +21,6 @@ function staff_single_pattern()
                     <div class=\"wp-block-column\" style=\"flex-basis:33%\"><!-- wp:post-featured-image /-->\n\n
                         <!-- wp:heading {\"level\":3} -->\n
                         <h3 class=\"wp-block-heading\">Contact Info</h3>\n<!-- /wp:heading -->\n\n
-<!-- wp:paragraph {
-	"metadata":{
-		"bindings":{
-			"content":{
-				"source":"core/employeeTitle",
-				"args":{
-					"key":"book-genre"
-				}
-			}
-		}
-	}
-} -->
-<p></p>
-<!-- /wp:paragraph -->
                     </div>\n
                 <!-- /wp:column -->\n\n
                     <!-- wp:column {\"style\":{\"spacing\":{\"padding\":{\"left\":\"var:preset|spacing|10\"}}},\"layout\":{\"type\":\"default\"}} -->\n
@@ -46,4 +33,3 @@ function staff_single_pattern()
         )
     );
 }
-add_action('init', 'staff_single_pattern');
