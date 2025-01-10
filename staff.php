@@ -138,3 +138,21 @@ add_filter('single_template', 'staff_single_template');
 
 
 
+function staff_template_block_build($template){
+  ob_start();
+  include __DIR__ . "/templates/{$template}";
+  return ob_get_clean();
+}
+
+add_action( 'init', 'staff_block_theme_template' );
+function staff_block_theme_template() {
+    register_block_template(
+        'staff-directory-guide//staff-profile',
+        array(
+            'title'       => 'Single Staff',
+            'description' => 'Displays a Staff Profile on your website unless a custom template has been applied to that post or a dedicated template exists.',
+            'content'     => staff_template_block_build('single-staff.php'),
+            'post_types'  => array( 'staff' ),
+            )
+    );
+}
