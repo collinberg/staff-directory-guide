@@ -126,10 +126,10 @@ function staff_single_template($single) {
     global $post;
 
     // Check if the post type matches
-    if ($post->post_type == 'staff' && !wp_is_block_theme() ) {
+    if ($post->post_type == 'staff' ) {
         // Locate the custom template in your plugin folder
-        if (file_exists(plugin_dir_path(__FILE__) . '/templates/single-staff.php')) {
-            return plugin_dir_path(__FILE__) . '/templates/single-staff.php';
+        if (file_exists(plugin_dir_path(__FILE__) . '/templates/single-staff.html')) {
+            return plugin_dir_path(__FILE__) . '/templates/single-staff.html';
         }
     }
     return $single;
@@ -137,22 +137,39 @@ function staff_single_template($single) {
 add_filter('single_template', 'staff_single_template');
 
 
-
+/*
+ * Function for grabbing templates and returning them as a string. We use this when building block templates.
+ */
 function staff_template_block_build($template){
   ob_start();
   include __DIR__ . "/templates/{$template}";
   return ob_get_clean();
 }
-
+/* 
+ * Registers a block template for the Staff Profile block.
+ * @see https://developer.wordpress.org/reference/functions/register_block_template/
+ */
 add_action( 'init', 'staff_block_theme_template' );
 function staff_block_theme_template() {
     register_block_template(
         'staff-directory-guide//staff-profile',
-        array(
-            'title'       => 'Single Staff',
-            'description' => 'Displays a Staff Profile on your website unless a custom template has been applied to that post or a dedicated template exists.',
-            'content'     => staff_template_block_build('single-staff.php'),
-            'post_types'  => array( 'staff' ),
-            )
-    );
+        [
+          'title'       => 'Single Staff',
+          'description' => 'Displays a Staff Profile on your website unless a custom template has been applied to that post or a dedicated template exists.',
+          'content'     => staff_template_block_build('single-staff.html'),
+          'post_types'  => array( 'staff' ),
+        ]
+    ); 
 }
+//For whatever Reason, this is not working. It does not check the post type correctly it seems.
+// add_action('single_template_hierarchy', 'staff_single_template_default',99);
+// function staff_single_template_default($single) {
+//     global $post;
+
+//     // Check if the post type matches
+//     if ($post->post_type == 'staff' ) {
+//         // Locate the custom template in your plugin folder
+//           return ['staff-profile'];
+//     }
+//     return $single;
+// }
